@@ -3,7 +3,7 @@
 // use this for Valina JavaScript.
 'use strict';
 
-// 2. Variable
+// 2. Variable, rw(read/write)
 // let (added in ES6)
 let globalName = 'global name'
 
@@ -28,14 +28,20 @@ var age;
 }
 console.log(age);
 
-// 3. Contants
+// 3. Contant, r(read only)
 // const(한 번 할당하면 값이 변하지 않음 -> favor immutale data type always)
-// favor immutale data type always for a few reasons:
+// use const whenever possible.
+// only use let if variable needs to change.
+const datyInWeek = 7;
+const maxNumber = 5;
+
+// Note!
+// Immutable data type: primitive types, frozen objects (i.e. object.freeze())
+// Mutable data types: all objects by default are mutable in JS
+// favor immutable data type always for a few reasons:
 //  - security
 //  - thread safety
 //  - reduce human mistakes
-const datyInWeek = 7;
-const maxNumber = 5;
 
 // 4. Variable types
 // primitive, single item(더 이상 작은 단위로 나뉘어질 수 없는, 한 가지 타입): number, string, boolean, null, undefined, symbol
