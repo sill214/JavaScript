@@ -119,14 +119,29 @@ function randomQuiz(answer, printYes, printNo) {
 // anonymous funcion
 const printYes = function () {
     console.log('yes!');
-}
+};
 
 // named funcion
 // better debugging in debugger's stack traces
 // recursions
 const printNo = function print() {
     console.log('no!');
-}
+};
 
 randomQuiz('wrong', printYes, printNo);
 randomQuiz('love you', printYes, printNo);
+
+// Arrow funcion
+// always anonymous
+// const simplePrint = function() {
+//     console.log('simplePrint!')
+// };
+
+const simplePrint = () => console.log('simplePrint!');
+const add = (a, b) => a + b;
+
+// IIFE: Immediately Invoked Function Expression
+// 선언함과 동시에 호출
+(function hello() {
+    console.log('IIFE');
+})();
