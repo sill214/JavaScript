@@ -121,7 +121,7 @@ const printYes = function () {
     console.log('yes!');
 };
 
-// named funcion
+// named funcion 
 // better debugging in debugger's stack traces
 // recursions
 const printNo = function print() {
