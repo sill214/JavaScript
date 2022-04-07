@@ -65,3 +65,35 @@ console.log('random', sill);
 // console.log(sill.random) // undefined
 
 // 6. for..in vs for..of
+// for (key in obj)
+console.clear(); // 이전 console.log 가 지워짐
+for (let key in sill) {
+    console.log(key);
+}
+
+// for (value of interable)
+const array = [1, 2, 4, 5];
+// for(let i = 0; i < array.length; i++) {
+//     console.log(array[i]);
+// }
+for(let value of array) {
+    console.log(value);
+}
+
+// 7. Fun cloning
+// Object.assign(dest, [obj1, obj2, obj3...])
+const user = { name: 'sill', age: 20 };
+const user2 = user;
+// user2.name = 'coder';
+console.log(user);
+
+// old way
+const user3 = {};
+for (let key in user) {
+    user3[key] = user[key];
+}
+console.clear();
+console.log(user3);
+
+const user4 = Object.assign({}, user);
+console.log(user4);
