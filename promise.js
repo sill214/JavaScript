@@ -41,3 +41,26 @@ fetchNumber
         });
     })
     .then(num => console.log(num));
+
+    // 4. Error Handling
+const getHen = () =>
+    new Promise((resolve, reject) => {
+        setTimeout(() => resolve(`닭`), 1000);
+    });
+const getEgg = hen => 
+    new Promise((resolve, reject) => {
+        setTimeout(() => reject(new Error(`error! ${hen} => 달걀`)), 1000); // resolve(`${hen} => 달걀`), 1000);
+    });
+const cook = egg => 
+    new Promise((resolve, reject) => {
+        setTimeout(() => resolve(`${egg} => 달걀 프라이`), 1000);
+    });    
+
+getHen()
+ .then(getEgg) // hen => getEgg(hen)
+ .catch(error => { // 달걀을 받아오는 함수의 에러를 처리하고 싶을 때는 그 다음 라인에 catch를 작성!
+     return '빵';
+ })
+ .then(cook) // (egg => cook(egg)
+ .then(console.log) // meal => console.log(meal)
+ .catch(console.log);
