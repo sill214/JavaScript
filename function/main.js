@@ -11,7 +11,10 @@ class Counter {
         this.counter++;
         console.log(this.counter);
         if(this.counter % 5 == 0) {
-            this.callback(this.counter);
+            // if(this.callback) { // undefined가 아니면 호출!
+            //     this.callback(this.counter)
+            // }
+            this.callback && this.callback(this.counter); // 위의 if문과 동일!
         }
     }
 }
