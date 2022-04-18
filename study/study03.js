@@ -42,7 +42,13 @@ users.forEach((name, index) => {
     console.log(`${index}. ${name}`);
 });
 
-// 5. IndexOf/ LastIndexOf
+// 5. IndexOf / LastIndexOf
 let arrIndexOf = [1, 2, 3, 4, 5, 1, 2, 3];
-arr.indexOf(3);
-arr.indexOf(3, 3);
+arr.indexOf(3); // 2
+arr.indexOf(3, 3); // index3부터 탐색! (4 ~ ), 7
+arr.lastIndexOf(3); // 끝에서부터 탐색, 7
+
+// 6. Includes: 포함하는지 확인!
+let arrInclude = [1, 2, 3];
+arr.includes(2); // true
+arr.includes(8); // false
