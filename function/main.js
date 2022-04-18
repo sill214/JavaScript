@@ -23,10 +23,17 @@ function printSomething(num) {
     console.log(`yo! ${num}`);
 }
 
-const coolCounter = new Counter(printSomething);
+function alertNum(num) {
+    alert(`alert! ${num}`);
+}
 
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
+// const coolCounter = new Counter(printSomething);
+
+// coolCounter.increase();
+// coolCounter.increase();
+// coolCounter.increase();
+// coolCounter.increase();
+// coolCounter.increase();
+
+const printCounter = new Counter(printSomething);
+const alertCounter = new Counter(alertNum);
