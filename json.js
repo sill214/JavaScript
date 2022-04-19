@@ -42,11 +42,11 @@ console.clear();
 json = JSON.stringify(rabbit);
 const obj = JSON.parse(json, (key, value) => {
     console.log(`key: ${key}, value: ${value}`);
-    return value;
+    return key === 'brithDate' ? new Date(value) : value;
 }); // string으로 serialize된 obj(함수 포함되지 않음!)으로부터 JSON을 만듦
 console.log(obj); 
 
 rabbit.jump();
 // obj.jump(); // Error!
 console.log(rabbit.brithDate.getDate());
-console.log(obj.brithDate);
+console.log(obj.brithDate.getDate());
