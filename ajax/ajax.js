@@ -149,3 +149,32 @@ if (httpRequest.readState == XMLHttpRequest.DONE && httpRequest.status == 200) {
 
 
 // 6. HTTP 요청 헤더
+// 클라이언트와 서버 사이에 이루어지는 HTTP 요청과 응답은 HTTP 헤더를 사용하여 수행
+
+// HTTP 요청 헤더
+// Ajax에서는 요청을 보내기 전에 setRequestHeader() 메소드를 사용해 HTTP 요청 헤더를 작성할 수 있음
+// XMLHttpRequest인스턴스.setRequestHeader(헤더이름, 헤더값);
+// 헤더이름은 HTTP 요청 헤더에 포함하고자 하는 헤더의 이름이며 그 값도 같이 전달
+httpRequest.onreadystatechange = function() {
+    if (httpRequest.readState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+        document.getElementById("text").innerHTML = httpRequest.responseText;
+    }
+};
+httpRequest.open("GET", "url 주소 입력", true);
+httpRequest.setRequestHeader("testHeader", "123");
+httpRequest.send();
+
+// HTTP 응답 헤더
+// 서버로부터 전달받은 HTTP 응답 헤더 내용을 다음 메소드를 통해 확인 가능
+// getAllResponseHeader(): HTTP 응답 헤더의 모든 헤더를 문자열로 반환
+// getResponseHeader(): HTTP 응답 헤더 중 인수로 전달받은 이름과 일치하는 헤더의 값을 문자열로 반환
+httpRequest.onreadystatechange = function() {
+    if (httpRequest.readState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+        document.getElementById("text").innerHTML = httpRequest.responseText;
+        document.getElementById("header").innerHTML = httpRequest.getAllResponseHeader();
+        document.getElementById("user").innerHTML = 
+            "testHeader: " + httpRequest.getResponseHeader("testHeader");
+    }
+};
+httpRequest.open("GET", "url 주소 입력", true);
+httpRequest.send();
