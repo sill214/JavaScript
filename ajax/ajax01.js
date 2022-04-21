@@ -47,3 +47,4 @@ axios.get('https://codingapple1.github.io/price.json')
     .catch(() => {
         console.log('Error!');
     })
+    
