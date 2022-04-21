@@ -52,7 +52,3 @@ arr.lastIndexOf(3); // 끝에서부터 탐색, 7
 let arrInclude = [1, 2, 3];
 arr.includes(2); // true
 arr.includes(8); // false
-
-// 7. Find(fn) / FindIndex(fn)
-// 첫번째 true 값만 반환하고 끝
-// 만약에 없으면 undefined를 반환함
